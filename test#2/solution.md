@@ -27,7 +27,7 @@ Les notifications doivent être générées de manière **asynchrone**, via des 
 
 ---
 
-## 🧩 Modèle de données `Notification`
+## Modèle de données `Notification`
 
 | Champ               | Type       | Description |
 |---------------------|------------|-------------|
@@ -44,19 +44,17 @@ Les notifications doivent être générées de manière **asynchrone**, via des 
 
 ### 1. Cron quotidien - Création ou mise à jour des notifications
 
-- Identifie les tâches en retard (non faites + échéance dépassée)
-- Si une notification n’existe pas pour la tâche : création
-- Si elle existe :
-  - Met à jour le `days_late`
-  - Remet `seen: false` si la tâche est toujours en retard
+Un seul job planifié chaque jour regroupant deux responsabilités :
+1. **Création et mise à jour des notifications**
+   - Identifie les tâches en retard
+   - Crée une notification si elle n’existe pas
+   - Si elle existe : met à jour le champ `days_late` et remet `seen` à false si nécessaire
 
-### 2. Cron quotidien - Archivage des notifications résolues
+2. **Archivage des notifications devenues obsolètes**
+   - Parcourt toutes les notifications non archivées
+   - Si la tâche liée est désormais complétée : renseigne le champ `archived_at`
 
-- Parcourt les **notifications non archivées**
-- Vérifie si la **tâche liée a été complétée**
-- Si oui, remplit le champ `archived_at`
-
-### 3. Cron hebdomadaire - Envoi des emails
+### 2. Cron hebdomadaire - Envoi des emails
 
 - Parcourt les notifications non archivées
 - Pour chaque utilisateur ayant au moins une notification :
@@ -64,7 +62,7 @@ Les notifications doivent être générées de manière **asynchrone**, via des 
   - Envoie un email récapitulatif des tâches en retard
   - Met à jour la `last_email_sent_at` de chaque notification concernée
 
-**Note:** Doit être lancé après les crons quotidiens
+**Note:** Doit être lancé après le cron quotidien
 
 ---
 
