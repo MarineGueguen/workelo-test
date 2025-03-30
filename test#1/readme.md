@@ -60,3 +60,26 @@ semaine.
 Bonne chance 💪!
 
 > Si tu as la moindre question ✉️ recrutement-tech@workelo.eu
+
+## 🚀 Setup & Execution
+
+### 1. Installer les dépendances
+
+```bash
+bundle install
+```
+
+### 2. Lancer le script
+
+```bash
+ruby lib/calendar.rb
+```
+Le script lit les fichiers `data/input_sandra.json` et `data/input_andy.json`, et affiche les créneaux disponibles pour la semaine.
+
+### 3. Lancer les tests RSpec
+
+```bash
+bundle exec rspec
+```
+
+Les tests se trouvent dans le dossier `spec/` et utilisent des fixtures JSON dans `spec/fixtures/`.
