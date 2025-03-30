@@ -10,8 +10,8 @@
   <title>TEST</title>
 </head>
 <body>
-  <section class="bg-white margin-bottom-80px margin-top-40px" style="min-height: 605px;max-width: 900px;margin: auto;">
-    <div id="quiz-page-1" class="quiz-page padded-20px">
+  <section data-controller="quiz" class="bg-white margin-bottom-80px margin-top-40px" style="min-height: 605px;max-width: 900px;margin: auto;">
+    <div id="quiz-page-1" data-quiz-target="page" class="quiz-page padded-20px">
       <div class="quiz-header">
         <div id="quizz-title" class="text-overflow text-uppercase-spacing no-padding" style="font-size: 16px;">STIMULUS QUIZ</div>
       </div>
@@ -28,32 +28,32 @@
         <h2 class="text-normal text-blue-dark text-center margin-top-40px margin-bottom-40px" style="white-space: pre-line;">What language does Stimulus JS come from ?</h2>
 
         <div class="margin-top-20px margin-bottom-50px">
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="A" class="quiz-answers-card d-flex link-decoration-none">
             <div class="quiz-answers-letter possible-answer">A</div>
             <p class="text-lighter no-margin">Ruby</p>
           </div>
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="B" class="quiz-answers-card d-flex link-decoration-none">
             <div class="quiz-answers-letter possible-answer">B</div>
             <p class="text-lighter no-margin">Java</p>
           </div>
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="C" class="quiz-answers-card d-flex link-decoration-none">
             <div class="quiz-answers-letter possible-answer">C</div>
             <p class="text-lighter no-margin">JavaScript</p>
           </div>
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="D" class="quiz-answers-card d-flex link-decoration-none">
             <div class="quiz-answers-letter possible-answer">D</div>
             <p class="text-lighter no-margin">Python</p>
           </div>
 
           <div class="margin-top-40px" style="display: flex; justify-content: space-between;">
-            <div class="button button-white button-previous text-normal">PREVIOUS</div>
-            <div class="button button-next background-color-customed text-normal">NEXT</div>
+            <div data-action="click->quiz#previous" class="button button-white button-previous text-normal">PREVIOUS</div>
+            <div data-action="click->quiz#next" class="button button-next background-color-customed text-normal">NEXT</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="quiz-page-2" class="quiz-page padded-20px">
+    <div id="quiz-page-2" data-quiz-target="page" class="quiz-page padded-20px">
       <div class="quiz-header">
         <div id="quizz-title" class="text-overflow text-uppercase-spacing no-padding" style="font-size: 16px;">STIMULUS QUIZ</div>
       </div>
@@ -71,28 +71,28 @@
         <h2 class="text-normal text-blue-dark text-center margin-top-40px margin-bottom-40px" style="white-space: pre-line;">How to declare a target element in stimulus ?</h2>
 
         <div class="margin-top-20px margin-bottom-50px">
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="A" class="quiz-answers-card d-flex link-decoration-none">
             <div class="quiz-answers-letter possible-answer">A</div>
             <p class="text-lighter no-margin">data-controller-target="target"</p>
           </div>
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="B" class="quiz-answers-card d-flex link-decoration-none"> 
             <div class="quiz-answers-letter possible-answer">B</div>
             <p class="text-lighter no-margin">data-target-controller="target"</p>
           </div>
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="C" class="quiz-answers-card d-flex link-decoration-none">
             <div class="quiz-answers-letter possible-answer">C</div>
             <p class="text-lighter no-margin">target-data="target.controller"</p>
           </div>
 
           <div class="margin-top-40px" style="display: flex; justify-content: space-between;">
-            <div class="button button-white button-previous text-normal">PREVIOUS</div>
-            <div class="button button-next background-color-customed text-normal">NEXT</div>
+            <div data-action="click->quiz#previous" class="button button-white button-previous text-normal">PREVIOUS</div>
+            <div data-action="click->quiz#next" class="button button-next background-color-customed text-normal">NEXT</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="quiz-page-3" class="quiz-page padded-20px">
+    <div id="quiz-page-3" data-quiz-target="page" class="quiz-page padded-20px">
       <div class="quiz-header">
         <div id="quizz-title" class="text-overflow text-uppercase-spacing no-padding" style="font-size: 16px;">STIMULUS QUIZ</div>
       </div>
@@ -109,28 +109,28 @@
         <h2 class="text-normal text-blue-dark text-center margin-top-40px margin-bottom-40px" style="white-space: pre-line;">Which method is automatically called when a controller is initialised ?</h2>
 
         <div class="margin-top-20px margin-bottom-50px">
-          <div class="quiz-answers-card d-flex link-decoration-none">
-            <div class="quiz-answers-letter possible-answer">A</div>
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="A" class="quiz-answers-card d-flex link-decoration-none">
+          <div class="quiz-answers-letter possible-answer">A</div>
             <p class="text-lighter no-margin">Constructor</p>
           </div>
-          <div class="quiz-answers-card d-flex link-decoration-none">
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="B" class="quiz-answers-card d-flex link-decoration-none">
             <div class="quiz-answers-letter possible-answer">B</div>
             <p class="text-lighter no-margin">Connect</p>
           </div>
-          <div class="quiz-answers-card d-flex link-decoration-none">
-            <div class="quiz-answers-letter possible-answer">C</div>
+          <div data-action="click->quiz#selectAnswer" data-quiz-target="answer" data-answer-letter="C" class="quiz-answers-card d-flex link-decoration-none">
+          <div class="quiz-answers-letter possible-answer">C</div>
             <p class="text-lighter no-margin">Initialize</p>
           </div>
 
           <div class="margin-top-40px" style="display: flex; justify-content: space-between;">
-            <div class="button button-white button-previous text-normal">PREVIOUS</div>
-            <div class="button button-next background-color-customed text-normal">FINALIZE</div>
+            <div data-action="click->quiz#previous" class="button button-white button-previous text-normal">PREVIOUS</div>
+            <div data-action="click->quiz#next" class="button button-next background-color-customed text-normal">FINALIZE</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="quiz-results" class="justify-content-around bg-blue-light padded-20px margin-top-130px">
+    <div id="quiz-results" data-quiz-target="results" class="justify-content-around bg-blue-light padded-20px margin-top-130px">
       <div id="quiz-result-1" class="margin-top-120px" style="margin-bottom: 100px;">
         <span class="question-text text-blue margin-bottom-20px" style="font-size: 22px;">1/3.</span>
         <h2 class="text-normal text-blue-dark text-center margin-bottom-40px" style="white-space: pre-line;">What language does Stimulus JS come from ?</h2>
@@ -161,7 +161,7 @@
 
       <div id="quiz-result-2" class="margin-top-120px" style="margin-bottom: 100px;">
         <span class="question-text text-blue margin-bottom-20px" style="font-size: 22px;">2/3.</span>
-        <h2 class="text-normal text-blue-dark text-center margin-bottom-40px" style="white-space: pre-line;">How to declare a target element in stimulus ? ?</h2>
+        <h2 class="text-normal text-blue-dark text-center margin-bottom-40px" style="white-space: pre-line;">How to declare a target element in stimulus ?</h2>
         <div class="margin-top-20px margin-bottom-50px">
           <div class="quiz-answers-card d-flex link-decoration-none true-answer">
             <div class="quiz-answers-letter">A</div>
